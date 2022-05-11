@@ -1,0 +1,18 @@
+// DIAABLE THIS FILE FOR DEBUGGING PATCHING
+
+// remove the temporary tags
+
+@PART[*]:LAST[zzzzProfileAlternate]
+{
+  !KALT_TAGS {}
+}
+
+// clean up templates and default tag values
+!KERBALISM_ALTERNATE_DEFAULTS:LAST[zzzzProfileAlternate] {}
+!KERBALISM_ALTERNATE_TEMPLATES:LAST[zzzzProfileAlternate] {}
+
+// remove template experiment modules from experiment definitions
+@EXPERIMENT_DEFINITION:HAS[@MODULE[*]]:LAST[zzzzProfileAlternate]
+{
+  !MODULE,* {}
+}
